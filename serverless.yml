@@ -30,7 +30,7 @@ package:
 
 functions:
   app:
-    handler: serverless_slope.app.app
+    handler: src.lambda.handler
     memorySize: 512
     timeout: 10
     environment:

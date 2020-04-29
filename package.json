@@ -4,7 +4,8 @@
   "description": "Serverless Quantized Mesh generation from AWS Terrain Tiles",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-local": "node scripts/local"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/kylebarron/serverless-mesh#readme",
   "dependencies": {
-    "aws-serverless-express": "^3.3.8"
+    "aws-serverless-express": "^3.3.8",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
   }
 }
