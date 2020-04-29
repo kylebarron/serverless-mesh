@@ -1,7 +1,8 @@
 require("@loaders.gl/polyfills");
 const { ImageLoader } = require("@loaders.gl/images");
 const { TerrainLoader } = require("@loaders.gl/terrain");
-const { load, registerLoaders } = require("@loaders.gl/core");
+const { parse, registerLoaders } = require("@loaders.gl/core");
+const fetch = require('node-fetch');
 
 registerLoaders(ImageLoader);
 
@@ -29,7 +30,10 @@ function loadMesh() {
     }
   };
   console.log('loading mesh')
-  return load(url, TerrainLoader, options);
+
+  return fetch(url).then(res => {
+    return parse(res.body, TerrainLoader, options);
+  })
 }
 
 exports.loadMesh = loadMesh;
