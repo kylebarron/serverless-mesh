@@ -2,7 +2,7 @@
   "name": "serverless-mesh",
   "version": "1.0.0",
   "description": "Serverless Quantized Mesh generation from AWS Terrain Tiles",
-  "main": "lambda.js",
+  "main": "src/lambda.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "package": "zip -r package.zip .",
