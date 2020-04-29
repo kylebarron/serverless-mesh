@@ -5,8 +5,7 @@
   "main": "src/lambda.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "package": "zip -r package.zip .",
-    "start-local": "node scripts/local"
+    "start-local": "node scripts/local.js"
   },
   "repository": {
     "type": "git",
@@ -14,12 +13,16 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kylebarron/serverless-mesh/issues"
   },
   "homepage": "https://github.com/kylebarron/serverless-mesh#readme",
   "dependencies": {
+    "@loaders.gl/core": "^2.1.2",
+    "@loaders.gl/images": "^2.1.2",
+    "@loaders.gl/polyfills": "^2.1.2",
+    "@loaders.gl/terrain": "^2.1.2",
     "aws-serverless-express": "^3.3.8",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
