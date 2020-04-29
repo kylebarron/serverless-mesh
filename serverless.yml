@@ -5,15 +5,8 @@ provider:
   runtime: nodejs12.x
   stage: ${opt:stage, 'production'}
   region: ${opt:region, 'us-east-1'}
-  deploymentBucket: ${opt:bucket}
 
   iamRoleStatements:
-  -  Effect: "Allow"
-     Action:
-       - "*"
-     Resource:
-       - arn:aws:s3:::${opt:bucket}*
-
   -  Effect: "Allow"
      Action:
        - "s3:*"
@@ -25,12 +18,12 @@ provider:
       - '*/*'
     minimumCompressionSize: 1
 
-package:
-  artifact: package.zip
+# package:
+#   artifact: package.zip
 
 functions:
   app:
-    handler: src.lambda.handler
+    handler: lambda.handler
     memorySize: 512
     timeout: 10
     environment:
