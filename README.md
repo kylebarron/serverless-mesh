@@ -1,4 +1,4 @@
-# lambda-quantized-mesh
+# serverless-mesh
 
 Serverless Quantized Mesh generation from AWS Terrain Tiles
 
