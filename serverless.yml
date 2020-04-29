@@ -1,0 +1,43 @@
+service: serverless-mesh
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'production'}
+  region: ${opt:region, 'us-east-1'}
+  deploymentBucket: ${opt:bucket}
+
+  iamRoleStatements:
+  -  Effect: "Allow"
+     Action:
+       - "*"
+     Resource:
+       - arn:aws:s3:::${opt:bucket}*
+
+  -  Effect: "Allow"
+     Action:
+       - "s3:*"
+     Resource:
+       - "arn:aws:s3:::elevation-tiles-prod*"
+
+  apiGateway:
+    binaryMediaTypes:
+      - '*/*'
+    minimumCompressionSize: 1
+
+package:
+  artifact: package.zip
+
+functions:
+  app:
+    handler: serverless_slope.app.app
+    memorySize: 512
+    timeout: 10
+    environment:
+      CACHE_CONTROL: ${opt:cache-control, 'public,max-age=3600'}
+
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: '*'
+          cors: true

@@ -1,0 +1,23 @@
+{
+  "name": "serverless-mesh",
+  "version": "1.0.0",
+  "description": "Serverless Quantized Mesh generation from AWS Terrain Tiles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylebarron/serverless-mesh.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylebarron/serverless-mesh/issues"
+  },
+  "homepage": "https://github.com/kylebarron/serverless-mesh#readme",
+  "dependencies": {
+    "aws-serverless-express": "^3.3.8"
+  }
+}
