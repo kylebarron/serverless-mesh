@@ -11,7 +11,8 @@ const router = express.Router();
 const { loadMesh } = require("./mesh");
 
 router.use(compression());
-router.use(cors());
+// Use cors through API Gateway
+// router.use(cors());
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(awsServerlessExpressMiddleware.eventContext());

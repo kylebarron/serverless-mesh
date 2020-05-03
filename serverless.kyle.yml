@@ -6,7 +6,30 @@ provider:
   stage: ${opt:stage, 'production'}
   region: ${opt:region, 'us-east-1'}
   httpApi:
-    cors: true
+    cors:
+      allowedOrigins:
+        - http://localhost
+        - https://all-transit.com
+        - https://kylebarron.dev
+        - https://kylebarron.github.io
+        - https://landsat3d.com
+        - https://landsat8.earth
+        - https://nst.guide
+        - https://nstguide.com
+        - https://sentine2.earth
+        - https://trails3d.com
+      allowedHeaders:
+        - Authorization
+        - Content-Type
+        - X-Amz-Date
+        - X-Amz-Security-Token
+        - X-Amz-User-Agent
+        - X-Api-Key
+      allowedMethods:
+        - GET
+        - OPTIONS
+      allowCredentials: true
+      maxAge: 6000 # In seconds
 
   iamRoleStatements:
   -  Effect: "Allow"
