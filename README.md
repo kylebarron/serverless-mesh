@@ -2,6 +2,8 @@
 
 Serverless Quantized Mesh generation from AWS Terrain Tiles
 
+**I implemented this in Python instead. See [`dem-tiler`](https://github.com/kylebarron/dem-tiler).**
+
 ## Deploy
 
 This is WIP, but when finished, to deploy:
